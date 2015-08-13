@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
+<head>
 <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-
+</head>
 <body id="myCanvas" ng-app="myApp" ng-keyDown="keyTest($event)" ng-controller="myCtrl">
 <canvas width="800px" height="600px" id="canvas" style="background-color:#000000"
 Your browser does not support the HTML5 canvas tag.
@@ -11,8 +12,17 @@ Your browser does not support the HTML5 canvas tag.
 var app = angular.module('myApp', []);
 app.controller('myCtrl', function($scope) {
 	var ctx = document.getElementById("canvas").getContext("2d");//canvas contex
+	var sprite = document.getElementById("sprite")
 	$scope.x = ctx.canvas.width/2;//shape x
 	$scope.y = ctx.canvas.height/2;//shape y
+	make_sprite();
+
+	function make_sprite()
+	{
+	  sprite = new Image();
+	  sprite.src = 'sprite-jake.png';
+	}
+	
 	$scope.keyTest = function (evt){
 		if(evt.keyCode === 13){
 			alert("Pause");
@@ -39,8 +49,9 @@ app.controller('myCtrl', function($scope) {
 	setInterval(function(){
 		ctx.fillStyle = "#000000"
 		ctx.fillRect(0,0,ctx.canvas.width, ctx.canvas.height)
-		ctx.fillStyle = "#FFFFFF";
-		ctx.fillRect($scope.x,$scope.y,20,20);
+		ctx.drawImage(sprite, $scope.x, $scope.y);
+		//ctx.fillStyle = "#FFFFFF";
+		//ctx.fillRect($scope.x,$scope.y,20,20);
 	},15);//canvas control - redraws every 15ms - ~66fps
 });
 </script>
