@@ -5,7 +5,11 @@ Installation
 ============
 
 - Install [NPM](https://docs.npmjs.com/getting-started/installing-node)
-- Install [bower](http://bower.io) using 
+- Install [bower](http://bower.io) using ;
 ```
 npm install -g bower
+```
+- Install bower components using;
+```
+bower install
 ```
