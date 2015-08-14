@@ -1,0 +1,17 @@
+{
+  "name": "Space-Invaders-Study",
+  "version": "0.0.1",
+  "homepage": "https://github.com/MrErdalUral/Space-Invaders-Study",
+  "authors": [
+    "MrErdalUral & Msusur"
+  ],
+  "description": "A space invader game",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
