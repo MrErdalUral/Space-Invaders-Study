@@ -6,6 +6,9 @@
     "MrErdalUral & Msusur"
   ],
   "description": "A space invader game",
+  "dependencies":{
+    "angular": "~1.4.4"
+  },
   "license": "MIT",
   "ignore": [
     "**/.*",
